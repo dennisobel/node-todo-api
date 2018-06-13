@@ -29,13 +29,13 @@ MongoClient.connect("mongodb://localhost:27017/TodoApp",(err,db)=>{
     //     console.log(result.ops[0]._id.getTimestamp())
     // })
     db.collection("Todos").insertOne({
-        text:"Walk Dog",
-        completed: true 
+        text:"Meet The Lone Wolf",
+        completed: false 
     },(err,result)=>{
         if(err){
             return console.log(err)
         }
-        console.log(result)
+        console.log(result.ops)
     })    
     db.close()
 });
